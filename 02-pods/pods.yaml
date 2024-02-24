@@ -5,7 +5,7 @@ metadata:
 
 spec:
   containers:
-    name: "hello-world"
-    image: nginx
-    ports:
-      containerPort: 80
+    - name: "hello-world"
+      image: nginx
+      ports:
+       containerPort: 80
