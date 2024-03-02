@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resources-pod-demo
+
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "64Mi"
+        limits:
+          cpu: "250m"
+          memory: "128Mi"
+
+
+# resources used for restrict the container resources limitation
+# requests>limits
+
+# kubectl describe pod resources-pod-demo

@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "annotations-demo"
+  labels: 
+    course: "devops"
+    duration: "3months"  # space not allowed when using labels
+
+  anotations:
+    trainer: "Rajasekhar Reddy"  
+    jenkins.url: "http://google.com/jenkins"
+
+
+spec:
+  containers:
+    - name: cnter1
+      image: nginx
+      ports:
+        - containerPort: 80
+
+
+
+# labels are not allow spaces 
+# labels are used for kubernetes resources labels used to filter or retrive the pod by using abels
+# labels limit lenth of the characters - 64
+# special charcters are not allowed
+
+
+#annotations are allowed spaces to use
+# annotations are used for third party resources
+# annoatations are used to filter or retrieve thr pod third party resources
+# annotations have no limit of characters
+# special characters are allowed

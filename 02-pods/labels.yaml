@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "labels-demo"
+  labels:
+    course: "devops"
+    duration: "3months"
+
+spec: 
+  containers:
+    - name: cnter1
+      image: nginx
+      ports: 
+        - containerPort: 80
+
+
+
+# kubectl apply -f labels.yaml
+# kubectl describe pod <podname>   --->   describe means inspect the data inside pod
+# kubectl describe pod labels-demo

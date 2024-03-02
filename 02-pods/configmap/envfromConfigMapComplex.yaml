@@ -1,0 +1,26 @@
+apiVersion: v2
+kind: Pod
+metadata:
+  name: "env-demo-from-configmap"
+  labels:
+    purpose: "env-demo-from-configmap"
+
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+      env:
+        - name: course
+          valueFrom:
+            configMapKeyRef:
+              name: devops-config
+              key: course
+
+        - name: duration
+          valueFrom:
+            configMapKeyRef:
+              name: devops-config
+              key: duration
+            

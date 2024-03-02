@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmp-pod-demo
+
+spec:
+  containers:
+    - name: nginxname
+      image: nginx
+      ports:
+        - containerPort: 80
+      envFrom:
+        - configMapRef:
+            name: devops-config 
+
+
+
+# kubectl apply -f envFromConfigmapEsay.yaml
+# kubectl exec -it configmp-pod-demo --  bash
+# env
