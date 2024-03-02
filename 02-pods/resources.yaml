@@ -10,13 +10,16 @@ spec:
       ports:
         - containerPort: 80
       resources:
-        requests:
+        requests: # soft limit(means when starts the container)
           cpu: "100m"
           memory: "64Mi"
-        limits:
+        limits: # expand up to this limit
           cpu: "250m"
           memory: "128Mi"
 
+
+# 1000m = 1 cpu =  1core
+# 250m = 0.25 cpu
 
 # resources used for restrict the container resources limitation
 # requests>limits
