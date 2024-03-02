@@ -10,10 +10,10 @@ metadata:
   
 spec:
   containers:
-      name: service-demo
-      image: nginx
-      ports: 
-        - containerPort: 80
+      - name: service-demo
+        image: nginx
+        ports: 
+         - containerPort: 80
 
 
 ---
