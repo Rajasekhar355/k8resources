@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "service-demo"
+  labels:
+    name: "service-demo"
+    app: "nginx"
+    demo: service
+    purpose: "service-practice"
+  
+spec:
+  containers:
+      name: service-demo
+      image: nginx
+      ports: 
+        - containerPort: 80
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "service-demo"
+spec:
+  selectors:
+    app: nginx
+    demo: service
+
+  ports:
+    - port: 80 # service port
+      targetport: 80 # container port
+
+
+
+
+
+  # cluster ip used for communicate internal commnication of kubernetes
+  # service should be there if we want to commnicate between pods
+  # three types of service
+
+  # cluster ip
+  #Node port
+  #Load balancer
+
+  # by default type Cluster ip

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: "multicontainers-demo"
+
+spec:
+  containers:
+    - name: "roboshop"
+      image: nginx
+      ports:
+        - containerPort: 80
+      
+    - name: ctner2
+      image: almalinux
+      command: ["sleep", "300"]
+
+
+# mostly multicontainer using for side car (to push the logs)
+# whenever you want to push the logs in that time we will oterwise one pod for one service
+
+
+# kubectl apply -f multicontainers.yaml
+# kubectl get pods
+# kubectl exec -it multicontainers-demo -c <containername> -- bash
+# For first container :::  kubectl exec -it multicontainers-demo -c roboshop -- bash
+# For second container ::: kubectl exec -it multicontainers-demo -c ctner2 -- bash
+
+
+# almalinux able to access container 1 resources 
+# For example login to second container and try ::: curl localhost --> Here you can see nginx page 

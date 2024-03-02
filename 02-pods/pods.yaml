@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "pod-demo"
+  namespace: roboshop
+
+spec:
+  containers:
+    - name: "hello-world"
+      image: nginx
+      ports:
+       - containerPort: 80
+
+
+
+# kubectl apply -f pods.yaml
+# kubectl get pods   ------> Heere nothing you will see
+# kubectl get pods -n roboshop ------> here you see the pod when you are using by namespace

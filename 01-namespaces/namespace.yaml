@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: roboshop
+
+
+  # kubectl create -f 01-namespace.yaml or kubectl apply -f 01-namespace.yaml
+  # kubectl get namespaces
